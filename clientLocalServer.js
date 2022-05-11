@@ -9,6 +9,7 @@ const connect = () => {
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
+    conn.write('Name: KOC');
     console.log('Server connected.')
   })
 

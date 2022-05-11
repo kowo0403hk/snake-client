@@ -1,7 +1,6 @@
 const net = require('net');
 
 // establishes a connection with the server
-
 const connect = () => {
   const conn = net.createConnection({
     host: '165.227.47.243',
@@ -10,6 +9,7 @@ const connect = () => {
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
+    conn.write('Name: KOC');
     console.log('Server connected.')
   })
 
