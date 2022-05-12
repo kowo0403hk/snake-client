@@ -1,6 +1,5 @@
 // Setting up user input (stdin)
 const {MOVE_KEYS} = require('./constantsLocalServer')
-
 let connection;
 
 const setupInput = (conn) => {
@@ -14,7 +13,6 @@ const setupInput = (conn) => {
   stdin.on("data", handleUserInput);
   return stdin;
 };
-
 
 const handleUserInput = function (key) {
   // to make sure that if Ctrl + C is input, the system will exit the process
