@@ -1,15 +1,16 @@
 const net = require('net');
+const {IP, PORT, NAME} = require('./constantsLocalServer')
 
 // establishes a connection with the server
 const connect = () => {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT
   });
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
-    conn.write('Name: KOC');
+    conn.write(NAME);
     console.log('Server connected.')
   })
 
