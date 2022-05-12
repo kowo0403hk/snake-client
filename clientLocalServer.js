@@ -10,15 +10,9 @@ const connect = () => {
 
   conn.on('connect', () => {
     conn.write('Name: KOC');
-    setInterval(() => conn.write('Move: up'), 1000)
-    setInterval(() => conn.write('Move: right'), 2000)
     console.log('Server connected.')
   })
 
-  // if registered another connect callback?
-  conn.on('connect', () => {
-    conn.write('Move: up');
-  });
 
   conn.on('data', (data) => {
     console.log('Server: ', data);
@@ -34,7 +28,6 @@ const connect = () => {
 }
 
 console.log('Connecting....');
-connect();
 
 module.exports = {
   connect
