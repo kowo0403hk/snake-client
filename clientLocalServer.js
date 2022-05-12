@@ -20,6 +20,7 @@ const connect = () => {
 
   conn.on('end', () => {
     console.log('Server: Come back when you are ready.')
+    process.exit();
   });
   
   conn.on('error', () => {});

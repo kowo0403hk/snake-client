@@ -19,15 +19,13 @@ const connect = () => {
 
   conn.on('end', () => {
     console.log('Server: Come back when you are ready.')
+    process.exit();
   });
   
   conn.on('error', () => {});
 
   return conn;
 }
-
-console.log('Connecting....');
-connect();
 
 module.exports = {
   connect
